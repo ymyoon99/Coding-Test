@@ -28,5 +28,4 @@ int main() {
     }
 
     cout << mp.size() << '\n'; // 서로 다른 key의 개수 = 서로 다른 부분 문자열 개수
-    return 0;
 }
