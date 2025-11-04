@@ -1,4 +1,4 @@
-// 백준 9012번
+// 백준 4949번
 #include <iostream>
 #include <algorithm>
 #include <string>
@@ -8,54 +8,66 @@
 
 using namespace std;
 
-int n;
 string s;
-
-bool check_pair(string s)
-{
-    stack<int> stk;
-
-    for (char c : s)
-    {
-        if (c == '(')
-        {
-            stk.push(c);
-        }
-        else 
-        {
-            if (stk.size()) // 들어있다면(지금은 반드시 왼쪽괄호)
-            {
-                stk.pop();
-            }
-            else
-            {
-                return false;
-            }
-        }
-    }
-
-    return stk.empty(); // 비어있으면 True, 아니면 False 반환
-}
 
 int main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
-
-    cin >> n;
-    while (n--)
+    
+    while (true)
     {
-        cin >> s;
+        getline(cin, s);
 
-        if (check_pair(s))
+        if (s[0] == '.' && s.size() == 1) break; // 예외처리
+
+        stack<char> stk;
+        bool flag = true;
+
+        for (char c : s)
         {
-            cout << "YES" << endl;
+  
+            if (c == ']')
+            {
+                if (stk.size() == 0 || stk.top() == '(')
+                {
+                    flag = false;
+                    break;
+                }
+                else
+                {
+                    stk.pop();
+                }
+            }
+
+            if (c == ')')
+            {
+                if (stk.size() == 0 || stk.top() == '[')
+                {
+                    flag = false;
+                    break;
+                }
+                else
+                {
+                    stk.pop();
+                }
+            }
+           
+            if (c == '(' || c == '[')
+            {
+                stk.push(c); // 열린 괄호가 들어왔을 때만 삽입
+            }
+        }
+
+        if (flag == true && stk.size() == 0)
+        {
+            cout << "yes" << endl;
         }
         else
         {
-            cout << "NO" << endl;;
+            cout << "no" << endl;
         }
+
     }
-  
 }
