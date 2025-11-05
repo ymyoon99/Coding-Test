@@ -5,7 +5,7 @@ VisualStudioVersion = 17.14.36414.22
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Map", "Map\Map.vcxproj", "{164AD66E-E1E8-4ACF-8132-E05EB0A3CD99}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Stack", "Stack\Stack\Stack.vcxproj", "{9491073A-3EF6-460F-A6DC-206A78397D57}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Stack&Queue", "Stack\Stack&Queue.vcxproj", "{9491073A-3EF6-460F-A6DC-206A78397D57}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
